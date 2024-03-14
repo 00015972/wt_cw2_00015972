@@ -8,7 +8,7 @@ body
         | module's requirements and does not represent an actual company
         | or service
       button.btn.btn-success(type='button')
-            a(href='/employee/register') New employee
+            a(href='/register-employee') New employee
     table
       thead
         tr
@@ -25,5 +25,5 @@ body
                 td #{employee.employee.phoneNumber}
                 td #{employee.employee.password}
                 td
-                    a(href='#' style='margin-right:8px; color: green') Edit
-                    a(href='#' style='color:red') Delete
+                    a(href=`/update-employee/${employee.id}` style='margin-right:8px; color: green') Edit
+                    a(href=`/delete-employee/${employee.id}` style='color:red') Delete

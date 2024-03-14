@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const web_controller = require("../../../controllers/web/index")
-// const {user_register_controller, user_update_controller} = require("../../../controllers/web/user");
 
-router.get("/register", web_controller.register);
+router.get("/register-employee", web_controller.register_employee);
 router.get("/employees-list", web_controller.get_employees);
-// router.get("/update/:id", user_update_controller.update)
+router.get("/delete-employee/:id", web_controller.delete_employee);
+router.get("/update-employee/:id", web_controller.update_employee);
 
 module.exports = router; // exporting router

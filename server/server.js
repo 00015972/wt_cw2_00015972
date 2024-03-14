@@ -19,5 +19,9 @@ const web_route = require("../routes/web");
 app.use("/api", api_route);
 app.use("/", web_route);
 
+// app.use((req, res) => {
+//     res.redirect("/employee/employees-list");
+// });
+
 const PORT = 4000; // created a port
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

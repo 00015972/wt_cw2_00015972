@@ -1,7 +1,7 @@
 include ./head.pug
 title Registration Form
 link(rel='stylesheet' href='/css/register_page.css')
-script(type='text/javascript' src='/javaScript/scripts.js')
+script(type='text/javascript' src='/javaScript/update.js')
 nav.navbar
   p
     | This web application was created to fulfill Web Technology
@@ -10,19 +10,19 @@ nav.navbar
   .buttons
     button
       a(href='/employees-list') Get All
-form#registration_form(action="/api/employee/register-employee" method="POST")
+form#update_form(action=`/api/employee/update-employee/${employee.id}` method="POST"  employee_id= `${employee.id}`)
   fieldset
     legend Personal Information
     label(for='firstName') First Name
-    input#firstName(type='text' name='firstName' placeholder='Mark')
+    input#firstName(type='text' name='firstName' placeholder='Mark' value=`${employee.employee.firstName}`)
     br
     br
     label(for='email') Email
-    input#email(type='email' name='email' required='' placeholder='example44@gmail.com')
+    input#email(type='email' name='email' required='' placeholder='example44@gmail.com' value=`${employee.employee.email}`)
     br
     br
     label(for='phoneNumber') Phone Number
-    input#phoneNumber(type='tel' name='phoneNumber' required='' placeholder='998904448822')
+    input#phoneNumber(type='tel' name='phoneNumber' required='' placeholder='998904448822' value=`${employee.employee.phoneNumber}`)
     br
     br
   fieldset
@@ -35,4 +35,4 @@ form#registration_form(action="/api/employee/register-employee" method="POST")
       li.rule(data-rule='uppercase') Must contain one uppercase letter
       li.rule(data-rule='special') Must contain one special character
       li.rule(data-rule='length') Must be 6-12 characters long
-  button#registerButton(type='submit') Register
+  button#registerButton(type='submit') Update
