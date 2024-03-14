@@ -1,1 +1,11 @@
-[]
+[
+    {
+        "id": "9875a642-a2c5-4889-8051-a02373bf6374",
+        "employee": {
+            "firstName": "Mark",
+            "email": "example77@gmail.com",
+            "phoneNumber": "998901115522",
+            "password": {}
+        }
+    }
+]

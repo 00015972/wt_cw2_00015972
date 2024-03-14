@@ -7,7 +7,7 @@ body {
 .navbar {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-p{
+p {
     margin: 0 !important;
 }
 form {
@@ -19,7 +19,6 @@ form {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
 
 legend {
     font-weight: bold;
@@ -42,7 +41,23 @@ input[type="password"] {
     border: 1px solid #ccc;
     border-radius: 3px;
 }
+ul {
+    padding: 10px;
+    font-size: 16px;
+    margin: 0;
+}
+.invalid{
+    color: red;
+}
 
+.rule {
+    color: red;
+    list-style: none;
+}
+
+.valid {
+    color: green;
+}
 textarea {
     width: 100%;
     height: 100px;

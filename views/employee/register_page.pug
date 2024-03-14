@@ -6,28 +6,32 @@ nav.navbar
     | or service
   .buttons
     button Get all
-form#registration-form
+form#registration_form(action="/api/employee/register" method="POST")
   fieldset
     legend Personal Information
-    label(for='firstName') First Name*
-    input#firstName(type='text' name='firstName')
+    label(for='firstName') First Name
+    input#firstName(type='text' name='firstName' placeholder='Mark')
     br
     br
-    label(for='email') Email*
-    input#email(type='email' name='email' required='')
+    label(for='email') Email
+    input#email(type='email' name='email' required='' placeholder='example44@gmail.com')
     br
     br
-    label(for='phoneNumber') Phone Number*
-    input#phoneNumber(type='tel' name='phoneNumber' required='')
+    label(for='phoneNumber') Phone Number
+    input#phoneNumber(type='tel' name='phoneNumber' required='' placeholder='998904448822')
     br
     br
   fieldset
     legend Password
-    label(for='password') Password*
-    input#password(type='password' name='password' required='')
-    br
-    br
-    label(for='repeatPassword') Repeat Password*
+    label(for='password') Password
+    input#password.form_control(type='password' name='password' required='')
+    ul#passwordRules
+      li.rule(data-rule='digit') Must contain a single digit from 1 to 9
+      li.rule(data-rule='lowercase') Must contain one lowercase letter
+      li.rule(data-rule='uppercase') Must contain one uppercase letter
+      li.rule(data-rule='special') Must contain one special character
+      li.rule(data-rule='length') Must be 8-12 characters long
+    label(for='repeatPassword') Repeat Password
     input#repeatPassword(type='password' name='repeatPassword' required='')
     br
     br
