@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+p{
+    margin: 0 !important;
+}
+form {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 450px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+legend {
+    font-weight: bold;
+    font-size: 25px !important;
+    margin-bottom: 0 !important;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.required {
+    color: red;
+}
+
+#agreeTerms {
+    margin-right: 5px;
+}
+
+button {
+    background-color: #4caf50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#cancelButton {
+    background-color: #ccc; /* Gray */
+}
+
+button:hover {
+    opacity: 0.8;
+}

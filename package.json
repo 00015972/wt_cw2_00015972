@@ -1,0 +1,27 @@
+{
+    "name": "wt_cw2_00015972",
+    "version": "1.0.0",
+    "description": "CRUD application",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "server": "nodemon server/server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/00015972/wt_cw2_00015972.git"
+    },
+    "author": "00015972",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/00015972/wt_cw2_00015972/issues"
+    },
+    "homepage": "https://github.com/00015972/wt_cw2_00015972#readme",
+    "dependencies": {
+        "body-parser": "^1.20.2",
+        "express": "^4.18.3",
+        "express-validator": "^7.0.1",
+        "nodemon": "^3.1.0",
+        "pug": "^3.0.2"
+    }
+}

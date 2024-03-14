@@ -1,0 +1,35 @@
+include ./head.pug
+nav.navbar
+  p
+    | This web application was created to fulfill Web Technology
+    | module's requirements and does not represent an actual company
+    | or service
+  .buttons
+    button Get all
+form#registration-form
+  fieldset
+    legend Personal Information
+    label(for='firstName') First Name*
+    input#firstName(type='text' name='firstName')
+    br
+    br
+    label(for='email') Email*
+    input#email(type='email' name='email' required='')
+    br
+    br
+    label(for='phoneNumber') Phone Number*
+    input#phoneNumber(type='tel' name='phoneNumber' required='')
+    br
+    br
+  fieldset
+    legend Password
+    label(for='password') Password*
+    input#password(type='password' name='password' required='')
+    br
+    br
+    label(for='repeatPassword') Repeat Password*
+    input#repeatPassword(type='password' name='repeatPassword' required='')
+    br
+    br
+  button#cancelButton(type='button') Cancel
+  button#registerButton(type='submit') Register
