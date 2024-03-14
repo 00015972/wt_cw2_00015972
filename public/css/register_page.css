@@ -1,11 +1,16 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 .navbar {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+a {
+    text-decoration: none !important;
+    color: rgb(205, 204, 204);
 }
 p {
     margin: 0 !important;
@@ -46,7 +51,7 @@ ul {
     font-size: 16px;
     margin: 0;
 }
-.invalid{
+.invalid {
     color: red;
 }
 

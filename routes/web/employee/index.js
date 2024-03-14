@@ -4,6 +4,7 @@ const web_controller = require("../../../controllers/web/index")
 // const {user_register_controller, user_update_controller} = require("../../../controllers/web/user");
 
 router.get("/register", web_controller.register);
+router.get("/employees-list", web_controller.get_employees);
 // router.get("/update/:id", user_update_controller.update)
 
 module.exports = router; // exporting router

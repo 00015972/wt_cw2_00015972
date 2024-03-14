@@ -2,16 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const registration_form = document.getElementById("registration_form");
 
     registration_form.addEventListener("submit", function (e) {
-        console.log("sdf")
+        console.log("sdf");
         e.preventDefault();
         const firstName = document.getElementById("firstName").value.trim();
         const email = document.getElementById("email").value.trim();
         const phoneNumber = document.getElementById("phoneNumber").value;
-        const password = document.getElementById("password");
-        const repeatPassword = document.getElementById("repeatPassword").value;
-        const passwordRules = document
-            .getElementById("passwordRules")
-            .querySelectorAll("li");
+        const password = document.getElementById("password").value;
         const errorElement = document.getElementById("error");
         if (errorElement) errorElement.textContent = "";
 
@@ -27,28 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
             showError("Please enter corret phone number", registration_form);
             return;
         }
-        if (repeatPassword !== password.value) {
-            showError("Passwords are not matching", registration_form);
+        if (!validatePassword(password)) {
+            showError("Please enter another password", registration_form);
+            password.style.border = "2px solid red";
             return;
         }
-        // if (!validatePassword(password)) {
-        //     showError("Please enter a valid address", registration_form);
-        //     return;
-        // }
-        password.addEventListener("input", function () {
-            const passwordValue = password.value;
-            passwordRules.forEach((rule) => {
-                const ruleName = rule.dataset.rule;
-                const isValid = validatePasswordRule(passwordValue, ruleName);
-                if (isValid) {
-                    rule.classList.add("valid");
-                    rule.classList.remove("invalid");
-                } else {
-                    rule.classList.remove("valid");
-                    rule.classList.add("invalid");
-                }
-            });
-        });
         axios
             .post("/api/employee/register", {
                 firstName,
@@ -73,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     });
 });
+
 function validateName(firstName) {
     const regex = /^[A-Za-z -]+$/;
     if (firstName.trim() === "" || !regex.test(firstName)) {
@@ -95,29 +75,12 @@ function validatePhoneNumber(phoneNumber) {
     }
     return true;
 }
-// function validatePassword(password) {
-//     const regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,12}$/;
-//     if (!regex.test(password)) {
-//         return false;
-//     }
-//     return true;
-// }
-
-function validatePasswordRule(password, rule) {
-    switch (rule) {
-        case "digit":
-            return /[1-9]/.test(password);
-        case "lowercase":
-            return /[a-z]/.test(password);
-        case "uppercase":
-            return /[A-Z]/.test(password);
-        case "special":
-            return /\W/.test(password);
-        case "length":
-            return password.length >= 8 && password.length <= 12;
-        default:
-            return false;
+function validatePassword(password) {
+    const regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{6,12}$/;
+    if (!regex.test(password)) {
+        return false;
     }
+    return true;
 }
 function showError(message, form) {
     console.log(message);

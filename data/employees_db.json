@@ -1,11 +1,20 @@
 [
     {
-        "id": "9875a642-a2c5-4889-8051-a02373bf6374",
+        "id": "5144cd77-53fb-43d3-a8bd-a35392fde16f",
+        "employee": {
+            "firstName": "Alex",
+            "email": "alex@gmail.com",
+            "phoneNumber": "998901114455",
+            "password": "M44l/kk"
+        }
+    },
+    {
+        "id": "1820a2b2-ec1f-48f0-8a63-8706d2cc5bd9",
         "employee": {
             "firstName": "Mark",
-            "email": "example77@gmail.com",
-            "phoneNumber": "998901115522",
-            "password": {}
+            "email": "example66@gmail.com",
+            "phoneNumber": "998901112233",
+            "password": "Mark2233"
         }
     }
 ]

@@ -1,0 +1,29 @@
+include ./head
+title CRUD Operation
+link(rel='stylesheet' href='/css/employees_list.css')
+body
+    nav.navbar
+      p
+        | This web application was created to fulfill Web Technology
+        | module's requirements and does not represent an actual company
+        | or service
+      button.btn.btn-success(type='button')
+            a(href='/employee/register') New employee
+    table
+      thead
+        tr
+          th First Name
+          th Email
+          th Phone
+          th Password
+          th Actions
+      tbody
+        each employee in employees
+            tr
+                td #{employee.employee.firstName}
+                td #{employee.employee.email}
+                td #{employee.employee.phoneNumber}
+                td #{employee.employee.password}
+                td
+                    a(href='#' style='margin-right:8px; color: green') Edit
+                    a(href='#' style='color:red') Delete

@@ -1,11 +1,15 @@
 include ./head.pug
+title Registration Form
+link(rel='stylesheet' href='/css/register_page.css')
+script(type='text/javascript' src='/javaScript/scripts.js')
 nav.navbar
   p
     | This web application was created to fulfill Web Technology
     | module's requirements and does not represent an actual company
     | or service
   .buttons
-    button Get all
+    button
+      a(href='/employee/employees-list') Get All
 form#registration_form(action="/api/employee/register" method="POST")
   fieldset
     legend Personal Information
@@ -30,10 +34,6 @@ form#registration_form(action="/api/employee/register" method="POST")
       li.rule(data-rule='lowercase') Must contain one lowercase letter
       li.rule(data-rule='uppercase') Must contain one uppercase letter
       li.rule(data-rule='special') Must contain one special character
-      li.rule(data-rule='length') Must be 8-12 characters long
-    label(for='repeatPassword') Repeat Password
-    input#repeatPassword(type='password' name='repeatPassword' required='')
-    br
-    br
+      li.rule(data-rule='length') Must be 6-12 characters long
   button#cancelButton(type='button') Cancel
   button#registerButton(type='submit') Register
